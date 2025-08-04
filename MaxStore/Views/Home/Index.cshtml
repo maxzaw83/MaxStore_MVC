@@ -2,7 +2,132 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<header class="hero-section section-fade-in">
+    <div class="container">
+        <img src="~/images/BannerPhoto.jpg" alt="Mega Myanmar Banner" class="logo">
+        <h1>Mega Myanmar</h1>
+        <p>Myanmar Foods</p>
+    </div>
+</header>
+<section id="featured-products" class="mb-5 section-fade-in">
+    <h2 class="text-center mb-4 fw-bold">Featured products</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col">
+            <a href="product-detail.html">
+                <div class="card h-100 product-card">
+                    <div class="card-img-container">
+                        <img src="https://i.ibb.co/D9W41pS/prod1.jpg" class="card-img-top" alt="Shan Noodle Salad">
+                        <button class="btn add-to-cart-btn">View Details</button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Shan Noodle Salad</h5>
+                        <p class="card-text">$5.50 AUD</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/d2xL50V/prod2.jpg" class="card-img-top" alt="Instant Mohinga Soup">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Instant Mohinga Soup</h5>
+                    <p class="card-text">$6.00 AUD</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/SxqXq9k/prod3.jpg" class="card-img-top" alt="Spicy Noodle Mix">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Spicy Noodle Mix</h5>
+                    <p class="card-text">$5.50 AUD</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/BGNV14j/prod4.jpg" class="card-img-top" alt="Laphet Thoke Kit">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Laphet Thoke Kit</h5>
+                    <p class="card-text">$5.50 AUD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="breakfast" class="section-fade-in">
+    <h2 class="text-center mb-4 fw-bold">Breakfast</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/0Xg2m9d/prod5.jpg" class="card-img-top" alt="Pea Paratha">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Pea Paratha</h5>
+                    <p class="card-text">$10.50 AUD</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/wJvMv1d/prod6.jpg" class="card-img-top" alt="Coconut Noodle Soup">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Coconut Noodle Soup</h5>
+                    <p class="card-text">$11.50 AUD</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/qj57k37/prod7.jpg" class="card-img-top" alt="Family Soup Pack">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Family Soup Pack</h5>
+                    <p class="card-text">$8.00 AUD</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/9vM9j7j/prod8.jpg" class="card-img-top" alt="Burmese Tea Mix">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Burmese Tea Mix</h5>
+                    <p class="card-text">$11.50 AUD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brands-section section-fade-in text-center">
+    <div class="container">
+        <h2 class="mb-4 fw-bold">Our Brands</h2>
+        <div class="d-flex justify-content-center align-items-center flex-wrap">
+            <img src="https://i.ibb.co/LdhJ202/brand1.png" alt="Brand 1" class="brand-logo">
+            <img src="https://i.ibb.co/bF964Jb/brand2.png" alt="Brand 2" class="brand-logo">
+            <img src="https://i.ibb.co/M7X1g5D/brand3.png" alt="Brand 3" class="brand-logo">
+            <img src="https://i.ibb.co/9GzBvXN/brand4.png" alt="Brand 4" class="brand-logo">
+            <img src="https://i.ibb.co/zX8Qh3N/brand5.png" alt="Brand 5" class="brand-logo">
+        </div>
+    </div>
+</section>

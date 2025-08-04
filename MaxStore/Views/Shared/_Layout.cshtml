@@ -3,47 +3,183 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MaxStore</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - Mega Myanmar Store NZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/fontawesome/css/all.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/toaster/toastr.min.css" />
     <link rel="stylesheet" href="~/MaxStore.styles.css" asp-append-version="true" />
+  
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MaxStore</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+   
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="~/images/megalogo.png" alt="Mega Myanmar Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Breakfast</a></li>
+                            <li><a class="dropdown-item" href="#">Lunch</a></li>
+                            <li><a class="dropdown-item" href="#">Snacks</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Content Managment
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a class="dropdown-item"  asp-controller="Category" asp-action="Index">Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item" asp-controller="Product" asp-action="Index">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item"  asp-controller="Company" asp-action="Index">Company</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="nav-item">
+                                <a class="dropdown-item"  asp-page="/Account/Register">Create User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item" asp-controller="User" asp-action="Index">Manage User</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3 navbar-search navbar-search-desktop" role="search">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center header-icons">
+                    <div id="user-profile-section" class="me-3">
+                    </div>
+                    <a href="cart.html" class="text-dark cart-icon-container">
+                        <i class="bi bi-cart fs-5"></i>
+                        <span class="cart-item-count">0</span>
+                    </a>
                 </div>
+                <form class="d-flex d-lg-none mt-3  navbar-search " role="search">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="....." aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+
+  
+
+
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="container my-5">
+            <partial name="_Notification" /> 
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="pt-5 section-fade-in">
         <div class="container">
-            &copy; 2025 - MaxStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12">
+                    <h5>Subscribe to our emails</h5>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3 offset-lg-2 col-md-6">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-dark fs-4"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mt-4">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <small class="text-center text-md-start mb-2 mb-md-0">&copy; 2025, Mega Store NZ - Myanmar Foods</small>
+                    <div class="payment-icons">
+                        <i class="fa-brands fa-apple-pay"></i>
+                        <i class="fa-brands fa-google-pay"></i>
+                        <i class="fa-brands fa-shopify"></i>
+                        <i class="fa-brands fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- User Login Simulation ---
+            const userProfileSection = document.getElementById('user-profile-section');
+
+            // --- !!! ---
+          
+            // --- Scroll Fade-In Animation Logic ---
+            const sections = document.querySelectorAll('.section-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
