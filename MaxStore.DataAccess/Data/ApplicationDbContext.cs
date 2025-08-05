@@ -1,7 +1,8 @@
-﻿using MaxStore.Models;
+﻿
+using MaxStore.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace MaxStore.Data
+namespace MaxStore.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext   
     {

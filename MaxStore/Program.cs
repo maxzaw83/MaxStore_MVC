@@ -1,4 +1,4 @@
-using MaxStore.Data;
+using MaxStore.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 

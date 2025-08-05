@@ -265,4 +265,6 @@ footer {
     }
 }
 
-
+.custom-toast-margin {
+    margin-top: 90px !important;
+}

@@ -1,4 +1,4 @@
-﻿using MaxStore.Data;
+﻿using MaxStore.DataAccess.Data;
 using MaxStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
