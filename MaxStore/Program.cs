@@ -1,4 +1,6 @@
 using MaxStore.DataAccess.Data;
+using MaxStore.DataAccess.Repository;
+using MaxStore.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
     new MySqlServerVersion(new Version(8, 0, 36))));
 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
