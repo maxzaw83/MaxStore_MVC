@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Product> 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header class="hero-section section-fade-in">
+    <div class="container">
+        <img src="~/images/BannerPhoto.jpg" alt="Mega Myanmar Banner" class="logo">
+        <h1>Mega Myanmar</h1>
+        <p>Myanmar Foods</p>
+    </div>
+</header>
+<section id="featured-products" class="mb-5 mt-2 section-fade-in">
+    <h2 class="text-center mb-4 fw-bold">Featured products</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+        @foreach ( var product in Model )
+        {
+        <div class="col">
+           
+                    <a asp-controller="Home" asp-action="Details" asp-route-productId="@product.Id" >
+                <div class="card h-100 product-card">
+                    <div class="card-img-container">
+                        <img src="@product.ImageURL" class="card-img-top" alt="Shan Noodle Salad">
+                        <button class="btn add-to-cart-btn">View Details</button>
+                    </div>
+                    <div class="card-body">
+                            <h5 class="card-title">@product.Title</h5>
+                        <p class="card-text">$@product.ListPrice</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        }
+
+    </div>
+</section>
+
+
+

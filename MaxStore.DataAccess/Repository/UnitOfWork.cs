@@ -13,10 +13,12 @@ namespace MaxStore.DataAccess.Repository
     {
         private ApplicationDbContext db;
         public ICategoryRepository Category { get; private set; }
+        public IProductRepository Product { get; private set; }
         public UnitOfWork(ApplicationDbContext _db)
         {
             db= _db;
             Category= new CategoryRepository(db);
+            Product = new ProductRepository(db);
         }
       
 

@@ -1,0 +1,65 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+<form method="post">
+<div class="card shadow border-0 mt-4 mb-4">
+<main class="container my-5">
+            <div class="row">
+                <div class="col-6 col-md-2 offset-lg-1 pb-1">
+                    <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                        <small>Back to home</small>
+                    </a>
+                </div>
+            </div>
+    <div class="row">
+        <div class="col-lg-6 product-gallery">
+            <div class="main-image mb-3">
+                <img src="@Model.ImageURL" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            </div>
+            <div class="product-thumbnails d-flex gap-2">
+                <img src="https://i.ibb.co/D9W41pS/prod1.jpg" class="w-25 active" alt="Thumbnail 1">
+                <img src="https://i.ibb.co/d2xL50V/prod2.jpg" class="w-25" alt="Thumbnail 2">
+                <img src="https://i.ibb.co/SxqXq9k/prod3.jpg" class="w-25" alt="Thumbnail 3">
+            </div>
+        </div>
+
+        <div class="col-lg-6 product-info ps-lg-5 mt-4 mt-lg-0">
+            <h1>@Model.Title</h1>
+            <p class="price mb-3">@Model.ListPrice</p>
+            <p class="text-light">@Model.Description</p>
+
+     
+          
+
+
+                    <div class="row pl-2 mb-3">
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary text-white border-0 fw-semibold"
+                                      id="inputGroup-sizing-default">
+                                    Quantity
+                                </span>
+                                <input  type="number" value="1" class="form-control text-end"
+                                       aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 pb-1">
+                            <button type="submit"
+                                    class="btn btn-primary bg-gradient  w-100 py-2 text-uppercase fw-semibold">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+            
+        </div>
+    </div>
+</main>
+
+</div>
+
+</form>
