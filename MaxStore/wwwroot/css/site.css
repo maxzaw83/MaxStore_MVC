@@ -353,3 +353,36 @@ body {
     border: 1px solid #d1d3e2;
     padding: 0.375rem 0.75rem;
 }
+
+/* Animate Font Awesome icon on link hover */
+.nav-link:hover .bi,
+.nav-link:hover .bi-solid {
+    --bi-animation-duration: 1.5s; /* Optional: control speed */
+    animation: fa-beat 1.5s infinite;
+    transition: color 0.3s ease-in-out;
+    color: orange;
+}
+
+/* --- Shopping Cart Icon Styling --- */
+
+/* 1. Base style for the cart icon link */
+.cart-icon-container {
+    color: #212529; /* Sets the default dark color */
+    display: inline-block; /* Helps with transform animations */
+    transition: color 0.3s ease-in-out; /* Smooths the color change */
+}
+
+    /* 2. Smooths the icon's size change animation */
+    .cart-icon-container i {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* 3. Styles for when you hover over the link */
+    .cart-icon-container:hover {
+        color: orange; /* Changes the link/icon color to orange */
+    }
+
+        /* 4. Animates the icon inside the link on hover */
+        .cart-icon-container:hover i {
+            transform: scale(1.2); /* Makes the icon grow by 20% */
+        }
