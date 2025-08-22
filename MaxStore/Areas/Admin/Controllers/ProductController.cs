@@ -260,24 +260,24 @@ namespace MaxStore.Areas.Admin.Controllers
             return Json(new { data = objProductlist });
         }
 
-        [HttpPost]
+        [HttpDelete]
         public IActionResult Delete(int? id)
         {
-            Product? objProduct = UnitOfWork.Product.Get(c => c.Id == id);
+            var productToBeDeleted = UnitOfWork.Product.Get(c => c.Id == id);
 
-            if (objProduct == null)
+            if ( productToBeDeleted == null)
             {
                 return Json(new { success= false, message= "Error while deleting" });
             }
 
-            var oldImagePath = Path.Combine(WebHostEnvironment.WebRootPath, objProduct.ImageURL.TrimStart('\\'));
+            var oldImagePath = Path.Combine(WebHostEnvironment.WebRootPath, productToBeDeleted.ImageURL.TrimStart('\\'));
 
-            if (System.IO.File.Exists(oldImagePath))
+            if (Directory.Exists(oldImagePath))
             {
-                System.IO.File.Delete(oldImagePath);
+                 Directory.Delete(oldImagePath);
             }
 
-            UnitOfWork.Product.Remove(objProduct);
+            UnitOfWork.Product.Remove(productToBeDeleted);
             UnitOfWork.Save();
             Notify("Product", ActionType.Deleted, NotificationType.Success);
             return Json(new { success = true, message = "Deleted successfully." });
