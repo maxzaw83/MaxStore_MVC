@@ -40,7 +40,7 @@ Front End User Screenshots
 ### Installation
 
 ```bash
-git clone https://github.com/maxzaw83/maxstore-mvc.git
+git clone https://github.com/maxzaw83/MaxStore_MVC.git
 cd maxstore
 
 # Restore and build the solution
@@ -97,3 +97,4 @@ Feel free to fork the repo, submit PRs, or request features. If you use this pro
 
 ⭐ Like it?
 Star ⭐ the repository to show support and help it reach more developers.
+
