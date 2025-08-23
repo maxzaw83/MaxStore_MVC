@@ -1,0 +1,99 @@
+# 🛒 MaxStore MVC (BtoC) E-Commerce 
+A modern, feature-rich, and scalable eCommerce platform built with  (ASP.NET Core + MySQL). Designed for rapid customization, and mobile-first responsiveness, MaxStore offers a branch of Myanmar food
+ import from Myanmar for Kiwin people in New Zealand.
+
+It is a simplified eCommerce version , specifically designed for ASP.NET Core junior developers and itermediate developers, using N-Tier architecture with MySQL as the database.
+Since it is built on Entity Framework, you can easily switch to any supported database provider. For this project, I chose MySQL to accommodate the needs of my client. 
+Front End User Screenshots
+![MegaMyanmar Screenshot](https://raw.githubusercontent.com/maxzaw83/maxzaw/refs/heads/main/public/images/s1.jpg)
+
+
+
+## 🚀 Key Features
+
+- 🧱 Built on **GrandNode 2.3** (ASP.NET Core & MySQL)
+- 🎨 Fully responsive UI with Bootstrap and jQuery
+- 🛍️ Product catalog, variants, reviews, and filters
+- 📦 Inventory & order management
+- 💳 Stripe
+- 🔒 Role-based access (Admin, Customer)
+- 📤 Deployed on Azure (App Service )
+
+## 💻 Tech Stack
+
+- **Backend**: ASP.NET Core 9.0, C#,
+- **Database**: MySQL 
+- **Frontend**: Bootstrap, jQuery, Razor Views
+- **DevOps**: GitHub, Docker, Azure DevOps (CI/CD)
+- **Hosting**: Azure App Service
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- [.NET SDK 8.0+](https://dotnet.microsoft.com/)
+- Entity Frame Work
+- Bootstrap and JQuery
+- MVC and NTire
+- Node.js (optional, for assets bundling)
+
+### Installation
+
+```bash
+git clone https://github.com/maxzaw83/maxstore-mvc.git
+cd maxstore
+
+# Restore and build the solution
+dotnet restore
+dotnet build
+
+# Start the GrandNode store
+dotnet run --project MaxStore
+🛠 Configuration
+All settings can be modified via the Admin Dashboard 
+
+Default admin credentials:
+
+Email: admin@yourstore.com
+
+Password: admin
+
+⚠️ Remember to change admin credentials after first login.
+
+✨ Customization
+You can override themes and UI elements via:
+
+Views/Shared/_Layout/
+
+wwwroot/css/ and wwwroot/js/
+
+Razor partials and layouts under Views/Shared/
+
+📤 Deployment
+Recommended (Azure )
+Set ConnectionString in appsettings.json
+
+Use dotnet publish to generate deployment assets
+
+Deploy to Azure App Service or your preferred host
+
+
+📜 License
+This project is open-sourced under the MIT License.
+
+📣 Credits
+.Net Core
+
+Bootstrap
+
+Entity Framework
+
+MySQL
+
+Azure
+
+🙌 Want to Contribute?
+Feel free to fork the repo, submit PRs, or request features. If you use this project commercially, attribution is appreciated.
+
+⭐ Like it?
+Star ⭐ the repository to show support and help it reach more developers.
